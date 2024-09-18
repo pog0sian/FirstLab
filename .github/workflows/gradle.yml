@@ -8,7 +8,7 @@ on:
 
 jobs:
   build-test:
-  name: Compile and test application
+    name: Compile and test application
 
   runs-on: ubuntu-latest
 
