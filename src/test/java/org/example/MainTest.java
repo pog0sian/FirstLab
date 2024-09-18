@@ -23,17 +23,18 @@ class MainTest {
     void reverse() {
         String expected = "llatsni ekam";
 
-        assertEquals(expected, Main.Reverse("make install"));
+        assertEquals(expected, Main.reverse("make install"));
     }
 
 
     @Test
     void discrimant() {
 
-        List<String> list = Main.Discrimant(1, -2,-3);
-        List<String> expected = new ArrayList<>();
-        expected.add("3.0");
-        expected.add("-1.0");
+        List<String> list = Main.discrimant(1, -2,-3);
+        List<String> expected = List.of(
+                "3.0",
+                "-1.0"
+        );
 
         assertEquals(expected, list);
     }
@@ -41,12 +42,10 @@ class MainTest {
     @Test
     void seriesSum() {
 
-        List<String> list = Main.seriesSum();
-        List<String> expected = new ArrayList<>();
+        double res = Main.seriesSum();
+        double expected = 0.6101121094474383;
 
-        expected.add("0.6101121094474383");
-
-        assertEquals(expected, list);
+        assertEquals(expected, res);
     }
 
 
@@ -56,8 +55,8 @@ class MainTest {
         boolean list1 = Main.palindrom("mam");
         boolean list2 = Main.palindrom("man");
 
-        assertEquals(true, list1);
-        assertEquals(false, list2);
+        assertTrue(list1);
+        assertFalse(list2);
 
     }
 }

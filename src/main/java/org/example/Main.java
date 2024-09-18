@@ -1,10 +1,6 @@
 package org.example;
 
-import com.sun.source.doctree.SummaryTree;
-
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
@@ -32,7 +28,7 @@ public class Main {
         return list;
     }
 
-    public static String Reverse(String input) {
+    public static String reverse(String input) {
 
         char[] chars = input.toCharArray();
         String str = "";
@@ -43,7 +39,7 @@ public class Main {
         return str;
     }
 
-    public static ArrayList<String> Discrimant (int a, int b, int c) {
+    public static ArrayList<String> discrimant(int a, int b, int c) {
 
         ArrayList<String> list = new ArrayList<>();
         int D = b * b - 4 * a * c;
@@ -51,21 +47,20 @@ public class Main {
         if (D > 0) {
             double x1 = (-b + Math.sqrt(D)) / (2 * a);
             double x2 = (-b - Math.sqrt(D)) / (2 * a);
+
             list.add(String.valueOf(x1));
             list.add(String.valueOf(x2));
-        }
-        else if (D == 0) {
-            double x = (-b) / (2 * a);
+        } else if (D == 0) {
+            double x = (-b) / (2.0 * a);
             list.add(String.valueOf(x));
-        }
-        else {
-            list.add(String.valueOf("Нет корней"));
+        } else {
+            list.add("Нет корней");
         }
 
         return list;
     }
 
-    public static ArrayList<String> seriesSum () {
+    public static double seriesSum() {
 
         ArrayList<String> list = new ArrayList<>();
 
@@ -74,29 +69,23 @@ public class Main {
         double i = 0;
 
         do {
-            i = 0;
-
-            i = (double) 1 / (n * n + n - 2);
-            sum +=  i;
+            i = 1.0 / (n * n + n - 2);
+            sum += i;
 
             n++;
         } while (i > Math.pow(10, -6));
 
-        list.add(String.valueOf(sum));
-
-        return list;
+        return sum;
     }
 
     public static boolean palindrom(String input) {
-
-        Scanner scanner = new Scanner(input.toLowerCase());
 
         char[] chars = input.toCharArray();
         String rev = "";
 
         for (int i = input.length() - 1; i >= 0; i--) {
             rev += chars[i];
-    }
+        }
         return input.equals(rev);
     }
 }
