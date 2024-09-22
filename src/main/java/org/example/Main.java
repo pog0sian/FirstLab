@@ -5,8 +5,8 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) {
 
-//        System.out.println(fizzBuzz(500));
-        System.out.println(seriesSum());
+        System.out.println(fizzBuzz(100));
+        System.out.println(palindrom("mam"));
 
     }
 
@@ -15,7 +15,7 @@ public class Main {
         ArrayList<String> list = new ArrayList<>();
 
         for (int i = 1; i <= n; i++) {
-            if (i % 7 == 0 && i % 3 == 0) {
+            if (i % 7 == 0 && i % 5 == 0) {
                 list.add("fizzbuzz");
             } else if (i % 5 == 0) {
                 list.add("fizz");
